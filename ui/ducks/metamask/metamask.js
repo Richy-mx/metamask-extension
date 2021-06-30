@@ -1,10 +1,22 @@
+import { addHexPrefix } from 'ethereumjs-util';
 import * as actionConstants from '../../store/actionConstants';
 import { ALERT_TYPES } from '../../../shared/constants/alerts';
 import { NETWORK_TYPE_RPC } from '../../../shared/constants/network';
 import {
   accountsWithSendEtherInfoSelector,
   getAddressBook,
+  txDataSelector,
 } from '../../selectors';
+import { hideModal, hideSidebar, updateTransaction } from '../../store/actions';
+import {
+  resetCustomData,
+  setCustomGasLimit,
+  setCustomGasPrice,
+} from '../gas/gas.duck';
+import { decGWEIToHexWEI } from '../../helpers/utils/conversions.util';
+import { TRANSACTION_STATUSES } from '../../../shared/constants/transaction';
+import { getStatusKey } from '../../helpers/utils/transactions.util';
+import { PENDING_STATUS_HASH } from '../../helpers/constants/transactions';
 
 export default function reduceMetamask(state = {}, action) {
   const metamaskState = {
@@ -197,6 +209,49 @@ export default function reduceMetamask(state = {}, action) {
       return metamaskState;
   }
 }
+
+const toHexWei = (value, expectHexWei) => {
+  return addHexPrefix(expectHexWei ? value : decGWEIToHexWEI(value));
+};
+
+// Action Creators
+export function updateTransactionGasFees({
+  gasPrice,
+  gasLimit,
+  maxPriorityFeePerGas,
+  maxFeePerGas,
+  isModal,
+  transaction,
+  expectHexWei = false,
+}) {
+  return async (dispatch) => {
+    const txParamsCopy = { ...transaction.txParams, gas: gasLimit };
+    if (gasPrice) {
+      dispatch(
+        setCustomGasPrice(toHexWei(txParamsCopy.gasPrice, expectHexWei)),
+      );
+      txParamsCopy.gasPrice = toHexWei(gasPrice, expectHexWei);
+    } else if (maxFeePerGas && maxPriorityFeePerGas) {
+      txParamsCopy.maxFeePerGas = toHexWei(maxFeePerGas, expectHexWei);
+      txParamsCopy.maxPriorityFeePerGas = addHexPrefix(
+        decGWEIToHexWEI(maxPriorityFeePerGas),
+      );
+    }
+    const updatedTx = {
+      ...transaction,
+      txParams: txParamsCopy,
+    };
+    dispatch(setCustomGasLimit(addHexPrefix(gasLimit.toString(16))));
+    await dispatch(updateTransaction(updatedTx));
+
+    if (isModal) {
+      dispatch(resetCustomData());
+      dispatch(hideModal());
+    }
+  };
+}
+
+// Selectors
 
 export const getCurrentLocale = (state) => state.metamask.currentLocale;
 
