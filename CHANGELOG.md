@@ -6,6 +6,92 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [9.8.0]
+### Uncategorized
+- Sync `master` with `develop` ([#11438](https://github.com/MetaMask/metamask-extension/pull/11438))
+- Fix
+- Merge remote-tracking branch 'origin/develop' into master-sync
+- EIP 1559 - Provide a GWEI label for advanced gas control fields ([#11419](https://github.com/MetaMask/metamask-extension/pull/11419))
+- Implement Dapp Acknowledgement screen for editing gas ([#11424](https://github.com/MetaMask/metamask-extension/pull/11424))
+- Fixing invalid minimumGasLimit prop (AdvancedGasInputs) ([#11412](https://github.com/MetaMask/metamask-extension/pull/11412))
+- Ensure that eth_estimateGas is called to estimate gas limit for simple sends on custom networks ([#11418](https://github.com/MetaMask/metamask-extension/pull/11418))
+- Bump @metamask/contract-metadata from 1.26.0 to 1.27.0 ([#11430](https://github.com/MetaMask/metamask-extension/pull/11430))
+- Bump @metamask/auto-changelog from 2.3.0 to 2.4.0 ([#11422](https://github.com/MetaMask/metamask-extension/pull/11422))
+- make network-display component only clickable when passed a function for onClick ([#11379](https://github.com/MetaMask/metamask-extension/pull/11379))
+- refix the instance of unsafe destructuring I had introduced and fixed and then reintroduced ([#11428](https://github.com/MetaMask/metamask-extension/pull/11428))
+- EIP-1559 - Implement TransactionDetail for confirmations ([#11404](https://github.com/MetaMask/metamask-extension/pull/11404))
+- yarn build:dev for running build subprocess not in lavamoat ([#11427](https://github.com/MetaMask/metamask-extension/pull/11427))
+- Switch hardfork in getCommonConfiguration when EIP-1559 support is detected ([#11385](https://github.com/MetaMask/metamask-extension/pull/11385))
+- don't run subprocesses in lavamoat if main process not run in lavamoat ([#11417](https://github.com/MetaMask/metamask-extension/pull/11417))
+- add eip-1559 fields to event schema ([#11408](https://github.com/MetaMask/metamask-extension/pull/11408))
+- add scroll function to jump to the top of screen ([#11386](https://github.com/MetaMask/metamask-extension/pull/11386))
+- track dapp suggested gas fees ([#11410](https://github.com/MetaMask/metamask-extension/pull/11410))
+- update txParams normalization and validation. ([#11406](https://github.com/MetaMask/metamask-extension/pull/11406))
+- Using expect in jest unit tests under /shared ([#11413](https://github.com/MetaMask/metamask-extension/pull/11413))
+- remove ui lookup of lastGasPrice field ([#11411](https://github.com/MetaMask/metamask-extension/pull/11411))
+- Updating address error ([#11389](https://github.com/MetaMask/metamask-extension/pull/11389))
+- add ChipWithInput component ([#11392](https://github.com/MetaMask/metamask-extension/pull/11392))
+- add account eip1559 detection support ([#11380](https://github.com/MetaMask/metamask-extension/pull/11380))
+- remove EIP-1559 fields from txParams before calling estimateGas ([#11368](https://github.com/MetaMask/metamask-extension/pull/11368))
+- Add methods to easily detect transaction type based on gas fields ([#11382](https://github.com/MetaMask/metamask-extension/pull/11382))
+- Remove gasPrice defaults for eip-1559 txs ([#11391](https://github.com/MetaMask/metamask-extension/pull/11391))
+- Implements the new EIP1559 UI components ([#11384](https://github.com/MetaMask/metamask-extension/pull/11384))
+- fix jest tests to run ui tests ([#11390](https://github.com/MetaMask/metamask-extension/pull/11390))
+- Sync `master` with `develop` ([#11388](https://github.com/MetaMask/metamask-extension/pull/11388))
+- cleanup conflicts
+- Merge remote-tracking branch 'origin/develop' into master-sync
+- add method to detect EIP 1559 support ([#11369](https://github.com/MetaMask/metamask-extension/pull/11369))
+- Call Wyre’s API via our backend to generate Wyre’s Checkout URL ([#11387](https://github.com/MetaMask/metamask-extension/pull/11387))
+- remove unused sufficient balance method ([#11381](https://github.com/MetaMask/metamask-extension/pull/11381))
+- Add support for fiat on-ramp via Transak ([#11376](https://github.com/MetaMask/metamask-extension/pull/11376))
+- Removing obsolete client-side transaction metrics events ([#11329](https://github.com/MetaMask/metamask-extension/pull/11329))
+- use jest for testing shared ([#11334](https://github.com/MetaMask/metamask-extension/pull/11334))
+- add maxPriorityFeePerGas and maxFeePerGas to incoming controller ([#11367](https://github.com/MetaMask/metamask-extension/pull/11367))
+- Adding metric events for Approved, Rejected, and Submitted to the TxController ([#11358](https://github.com/MetaMask/metamask-extension/pull/11358))
+- Use eth_gasPrice result for setting too low warning on custom networks ([#11370](https://github.com/MetaMask/metamask-extension/pull/11370))
+- account tests using fixtures ([#11374](https://github.com/MetaMask/metamask-extension/pull/11374))
+- Adding edit navigation button flow back to send token flow ([#11335](https://github.com/MetaMask/metamask-extension/pull/11335))
+- Provide New UI Components for EIP-1559 Designs ([#11357](https://github.com/MetaMask/metamask-extension/pull/11357))
+- Prevent propType errors in for TransactionIcon statuses ([#11316](https://github.com/MetaMask/metamask-extension/pull/11316))
+- Update controllers with conversionRate change with minimal required changes in extension ([#11361](https://github.com/MetaMask/metamask-extension/pull/11361))
+- Refactor send page state management ([#10965](https://github.com/MetaMask/metamask-extension/pull/10965))
+- add back strict equality checks in typed-message-manager, ensure that chainId comparison bases are both ints ([#11340](https://github.com/MetaMask/metamask-extension/pull/11340))
+- Add logs for Google Chrome binary checksum verification ([#11366](https://github.com/MetaMask/metamask-extension/pull/11366))
+- Allowing custom rpc form submission when chainId is a duplicate ([#11363](https://github.com/MetaMask/metamask-extension/pull/11363))
+- add erc-721 token detection and flag to disable sending ([#11210](https://github.com/MetaMask/metamask-extension/pull/11210))
+- Fix chromereload while on development ([#11359](https://github.com/MetaMask/metamask-extension/pull/11359))
+- Using fixed positioning for home notifications ([#11356](https://github.com/MetaMask/metamask-extension/pull/11356))
+- Adding gasEstimateType to 'Changed Gas Button' metrics event ([#11352](https://github.com/MetaMask/metamask-extension/pull/11352))
+- Add 'Transaction Added' metric event to TransactionController ([#11341](https://github.com/MetaMask/metamask-extension/pull/11341))
+- Add retries to the benchmark script ([#11319](https://github.com/MetaMask/metamask-extension/pull/11319))
+- fix unsafe destructuring instance ([#11351](https://github.com/MetaMask/metamask-extension/pull/11351))
+- change download location of chrome file ([#11346](https://github.com/MetaMask/metamask-extension/pull/11346))
+- Update `benchmark.js` script to use `yargs` ([#11318](https://github.com/MetaMask/metamask-extension/pull/11318))
+- Updating Secret Recovery code -> Secret Recovery Phrase (Backup notice) ([#11338](https://github.com/MetaMask/metamask-extension/pull/11338))
+- Fixing untranslated text in ConfirmApproveContent ([#11339](https://github.com/MetaMask/metamask-extension/pull/11339))
+- fix 'confirm popup' ui ([#11331](https://github.com/MetaMask/metamask-extension/pull/11331))
+- refactor send eth tests to use fixture ([#11189](https://github.com/MetaMask/metamask-extension/pull/11189))
+- Support EIP-2718 transaction types, EIP-2930 and EIP-1559 support ([#11288](https://github.com/MetaMask/metamask-extension/pull/11288))
+- Lionbridge translation updates ([#11292](https://github.com/MetaMask/metamask-extension/pull/11292))
+- Fix benchmark script with 1 sample ([#11320](https://github.com/MetaMask/metamask-extension/pull/11320))
+- Add `--leave-running` flag to E2E test script ([#11321](https://github.com/MetaMask/metamask-extension/pull/11321))
+- Make MAX button accessible ([#11322](https://github.com/MetaMask/metamask-extension/pull/11322))
+- fix xpath to get firefox uuid ([#11323](https://github.com/MetaMask/metamask-extension/pull/11323))
+- Sync `master` with `develop` ([#11315](https://github.com/MetaMask/metamask-extension/pull/11315))
+- Add confirm-deploy-contract component to Storybook ([#11211](https://github.com/MetaMask/metamask-extension/pull/11211))
+- Merge remote-tracking branch 'origin/develop' into master-sync
+- Add `run-e2e-test.js` script ([#11301](https://github.com/MetaMask/metamask-extension/pull/11301))
+- Enable Chrome E2E logs ([#11295](https://github.com/MetaMask/metamask-extension/pull/11295))
+- Start dapp directly from `metamask-ui.spec.js` ([#11299](https://github.com/MetaMask/metamask-extension/pull/11299))
+- Fixing untranslated alt tag in ContactListTab component ([#11293](https://github.com/MetaMask/metamask-extension/pull/11293))
+- Fix community links in README ([#11289](https://github.com/MetaMask/metamask-extension/pull/11289))
+- Changed scss style to see token symbol ([#11294](https://github.com/MetaMask/metamask-extension/pull/11294))
+- patch gas price issue - add fallback gas price ([#11239](https://github.com/MetaMask/metamask-extension/pull/11239))
+-  ([#11286](https://github.com/MetaMask/metamask-extension/pull/11286))
+- Upgrading eth-ledger-bridge-keyring -> 0.6.0, eth-trezor-keyring -> 0.7.0 ([#11290](https://github.com/MetaMask/metamask-extension/pull/11290))
+- Updating "designed and built" message 🌎 ([#11285](https://github.com/MetaMask/metamask-extension/pull/11285))
+- Fixing unlocalized strings ([#11281](https://github.com/MetaMask/metamask-extension/pull/11281))
+
 ## [9.7.1]
 ### Fixed
 - [#11426](https://github.com/MetaMask/metamask-extension/pull/11426): Fixed bug that broke transaction speed up and cancel, when attempting those actions immediately after opening MetaMask
@@ -2326,7 +2412,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Uncategorized
 - Added the ability to restore accounts from seed words.
 
-[Unreleased]: https://github.com/MetaMask/metamask-extension/compare/v9.7.1...HEAD
+[Unreleased]: https://github.com/MetaMask/metamask-extension/compare/v9.8.0...HEAD
+[9.8.0]: https://github.com/MetaMask/metamask-extension/compare/v9.7.1...v9.8.0
 [9.7.1]: https://github.com/MetaMask/metamask-extension/compare/v9.7.0...v9.7.1
 [9.7.0]: https://github.com/MetaMask/metamask-extension/compare/v9.6.1...v9.7.0
 [9.6.1]: https://github.com/MetaMask/metamask-extension/compare/v9.6.0...v9.6.1
